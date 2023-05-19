@@ -5,7 +5,6 @@ create database algorythmn;
 -- selektojme databazen ne te cilen duam te punojme
 
 use algorythmn;
-
 -- krijojme tabelen punonjes me fushat perkatese
 
 create table Punonjes(
@@ -238,10 +237,17 @@ select * from paraqitja ;
 select p.id_punonjes, p.emerpunonjesi, p.mbiemerpunonjesi, a.dita, a.prezenca
 from punonjes as p 
 inner join paraqitja as a
-where p.id_punonjes = a.id_punonjes and a.dita="2023.05.18" ;
+where p.id_punonjes = a.id_punonjes and a.dita="2023.05.16" ;
 
 
+select * from paraqitja;
 
+-- query per te afishuar se sa punonjes kane qene ne zyre nga dita e pare e muajit deri ne momentin qe execute prog
 
-
+select count(a.prezenca) as ditepune, p.id_punonjes, p.emerpunonjesi, p.mbiemerpunonjesi
+from punonjes as p
+inner join paraqitja as a
+on a.id_punonjes = p.id_punonjes
+where  prezenca = 1 and dita between "2023.05.01" and "2023.05.18" 
+group by p.id_punonjes;
 
