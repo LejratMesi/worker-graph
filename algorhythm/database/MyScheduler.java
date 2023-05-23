@@ -1,17 +1,14 @@
-package Algorythmn.database;
-
+package algorhythm.database;
 
 import java.util.Timer;
 import java.util.TimerTask;
-
-
 public class MyScheduler extends PrezencaPunonjesve {
     public void scheduleTask() {
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                Llogaritja();
+                llogaritja();
             }
         };
 
@@ -34,6 +31,6 @@ public class MyScheduler extends PrezencaPunonjesve {
     public static void main(String[] args) {
         MyScheduler scheduler = new MyScheduler();
         scheduler.scheduleTask();
-        Llogaritja();
+        llogaritja();
     }
 }
