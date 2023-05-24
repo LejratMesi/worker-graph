@@ -1,43 +1,34 @@
 package algorhythm.entities;
 
 public class Punonjes {
-    private int id_punonjes;
-    private String emerPunonjesi;
-    private String mbiemerPunonjesi;
+    private int id;
+    private String emer;
+    private String mbiemer;
     private String email;
     private int prezenca;
 
-
-    public Punonjes(int id_punonjes, String emerPunonjesi, String mbiemerPunonjesi, String email, int prezenca) {
-        this.id_punonjes = id_punonjes;
-        this.emerPunonjesi = emerPunonjesi;
-        this.mbiemerPunonjesi = mbiemerPunonjesi;
+    public Punonjes(int id, String emer, String mbiemer, String email, int prezenca) {
+        this.id = id;
+        this.emer = emer;
+        this.mbiemer = mbiemer;
         this.email = email;
         this.prezenca = prezenca;
     }
 
-    public int getId_punonjes() {
-        return id_punonjes;
+    public int getId() {
+        return id;
     }
 
-    public void setId_punonjes(int id_punonjes) {
-        this.id_punonjes = id_punonjes;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getEmerPunonjesi() {
-        return emerPunonjesi;
+    public String getMbiemer() {
+        return mbiemer;
     }
 
-    public void setEmerPunonjesi(String emerPunonjesi) {
-        this.emerPunonjesi = emerPunonjesi;
-    }
-
-    public String getMbiemerPunonjesi() {
-        return mbiemerPunonjesi;
-    }
-
-    public void setMbiemerPunonjesi(String mbiemerPunonjesi) {
-        this.mbiemerPunonjesi = mbiemerPunonjesi;
+    public void setMbiemer(String mbiemer) {
+        this.mbiemer = mbiemer;
     }
 
     public String getEmail() {
@@ -58,7 +49,7 @@ public class Punonjes {
 
     @Override
     public String toString() {
-        return "Punonjes{" + "id_punonjes=" + id_punonjes + ", emerPunonjesi=" + emerPunonjesi + ", mbiemerPunonjesi=" + mbiemerPunonjesi + ", email=" + email + ", prezenca=" + prezenca + '}';
+        return "Punonjes{" + "id=" + id + ", emer=" + emer + ", mbiemer=" + mbiemer + ", email=" + email + ", prezenca=" + prezenca + '}';
     }
 
 }
