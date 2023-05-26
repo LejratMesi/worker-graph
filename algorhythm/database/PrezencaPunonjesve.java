@@ -8,12 +8,10 @@ import java.util.List;
 public class PrezencaPunonjesve {
     public static void llogaritja() {
         String url = "jdbc:mysql://localhost:3306/algorythmn";
-        String username = "root";
-        String password = "Erlind@23";
+        String username = "username";
+        String password = "password";
         Connection conn = null ;
         Statement stmt = null;
-
-
 
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/algorythmn", "root", "Erlind@23");
@@ -28,7 +26,6 @@ public class PrezencaPunonjesve {
 //                    "where p.id_punonjes = a.id_punonjes and localtime()` ;";
 //            ResultSet rs = stmt.executeQuery(query);
 
-
 //Printimi i rezultateve
 //            while(rs.next()){
 //                String algorythmnData = "";
@@ -37,7 +34,6 @@ public class PrezencaPunonjesve {
 //                }
 //                System.out.println(algorythmnData);
 //            }
-
 
 //Llogarit prezencen ne perqindje
 
@@ -49,7 +45,9 @@ public class PrezencaPunonjesve {
                     "group by p.id_punonjes;";
             ResultSet rs1 = stmt.executeQuery(query1);
 
-            LocalDate dateFillimi = LocalDate.of(2023, 5, 1);
+            LocalDate currentDate = LocalDate.now();
+            int localMonth = currentDate.getMonthValue();
+            LocalDate dateFillimi = LocalDate.of(2023, localMonth , 1);
             LocalDate dateMbarimi = LocalDate.now();
 
             Period periudha = dateFillimi.until(dateMbarimi);
@@ -61,9 +59,7 @@ public class PrezencaPunonjesve {
             while (rs1.next())
             {
                 final List<String> columnList = new LinkedList<String>();
-
                 double prezenca  = (rs1.getDouble(1) /dite_total) * 100 ;
-
 
                 System.out.println("Punonjesi " + rs1.getString(3) + " eshte paraqitur ne zyre "+ String.format("%.2f",prezenca) + "%");
             }
